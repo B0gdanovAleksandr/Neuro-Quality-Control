@@ -1,63 +1,56 @@
-# Neuro-Quality-Control
-Нейроконтроль качества одела продаж
+# Neuro-Quality-Control  
+**Neural Quality Control System for Sales Departments**
 
-README (Russian)
-Нейроконтроль качества отдела продаж
+This project automates the transcription, analysis, and evaluation of sales calls using AI and machine learning. It is designed to improve the quality of customer communication and increase team efficiency.
 
-Этот проект предназначен для автоматической транскрибации, анализа и оценки телефонных разговоров в отделе продаж с помощью технологий машинного обучения и ИИ.
+## 🔧 Features
+- 🎙️ Automatic transcription of `.mp3` audio files using Whisper Large Turbo
+- 🗂️ Storage of transcriptions in SQLite database
+- 🤖 Quality analysis of conversations via OpenAI GPT-3.5
+- 📊 Generation of concise reports and actionable improvement recommendations
+- 📤 Export of results to Excel (`call_analysis_results.xlsx`)
 
-Основные возможности:
-Автоматическая транскрибация аудиофайлов формата .mp3.
-Хранение транскрипций в базе данных SQLite.
-Анализ разговоров при помощи OpenAI GPT-3.5 для оценки качества звонков.
-Генерация кратких отчетов и рекомендаций по улучшению.
-Экспорт результатов в Excel.
-Использование
-Установите необходимые библиотеки:
+## 🚀 How to Use
+
+### 1. Install Dependencies
+```bash
+pip install gradio_client sqlalchemy openai
+2. Prepare Your Environment
+Upload .mp3 audio files to a Google Drive folder
+
+Set the path to this folder in the variable google_drive_path
+
+Set your OpenAI API key as environment variable:
 
 bash
-pip install gradio_client sqlalchemy openai
+Копировать
+Редактировать
+export OPENAI_API_KEY=your_key_here
+3. Run the Script
+The script will:
 
-Подготовьте папку на Google Drive для хранения аудиозаписей и вставьте путь в переменную google_drive_path.
+Scan your folder,
 
-Перед запуском убедитесь, что у вас есть API-ключ OpenAI, и он сохранен как переменная окружения OPENAI_API_KEY.
+Transcribe audio files,
 
-Запустите скрипт. Он автоматически обработает все .mp3 файлы в указанной папке, транскрибирует их и выполнит анализ.
+Analyze each call,
 
-Результаты сохранятся в базу данных и файл call_analysis_results.xlsx.
+Save results in SQLite + Excel.
 
-Важные моменты
-Для работы требует доступа к Google Drive для хранения и обработки аудио.
-В качестве модели для транскрипции используется Whisper Large Turbo.
-Анализ отражает качество коммуникации и содержит рекомендации по улучшению.
+📌 Requirements
+Access to Google Drive for file processing
 
+Whisper Large Turbo model for fast transcription
 
-README (English)
-Neural Quality Control for Sales Department
+OpenAI API access (GPT-3.5 or newer)
 
-This project automates transcription, analysis, and evaluation of sales calls using artificial intelligence and machine learning technologies.
+📈 Business Value
+This tool helps:
 
-Main features:
-Automatic transcription of .mp3 audio files.
-Storage of transcriptions in an SQLite database.
-Call quality analysis using OpenAI GPT-3.5.
-Generation of concise reports and improvement recommendations.
-Export results to Excel.
-Usage
-Install required libraries:
+Improve quality control feedback cycles (from days to minutes)
 
-bash
-pip install gradio_client sqlalchemy openai
+Detect communication issues automatically
 
-Prepare a folder on Google Drive for storing recordings and set the path in the google_drive_path variable.
+Train sales teams faster using insights from real calls
 
-Ensure you have an OpenAI API key set as environment variable OPENAI_API_KEY.
-
-Run the script. It will automatically process all .mp3 files in the specified folder, transcribe and analyze them.
-
-Results will be saved in the database and exported to call_analysis_results.xlsx.
-
-Important notes
-Requires access to Google Drive for storing and processing recordings.
-Uses Whisper Large Turbo model for transcription.
-The analysis evaluates communication quality and provides improvement tips.
+Note: Due to NDA restrictions, only a limited version is open-sourced. A Google Colab demo is available to test using your own OpenAI key.
